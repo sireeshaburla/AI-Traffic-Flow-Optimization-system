@@ -1,0 +1,8 @@
+{
+  "name": "ai-traffic-flow-optimization",
+  "version": "1.0.0",
+  "description": "Interactive demo dashboard for AI-powered traffic flow optimization",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^5.1.0" }
+}
