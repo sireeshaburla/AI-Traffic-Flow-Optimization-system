@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Traffic Flow Optimization</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">↗</span> FlowAI</a>
+    <nav><a class="active" href="#dashboard">Dashboard</a><a href="#how">How it works</a><a href="#about">About</a></nav>
+    <span class="live"><i></i> LIVE DEMO</span>
+  </header>
+
+  <main>
+    <section class="hero" id="dashboard">
+      <div class="hero-copy">
+        <p class="eyebrow">SMART CITY • COMPUTER VISION</p>
+        <h1>Smarter roads.<br><span>Smoother journeys.</span></h1>
+        <p class="intro">An interactive demonstration of how vehicle detection, traffic density analysis and adaptive signal timing can work together to reduce congestion.</p>
+        <div class="actions"><button id="startBtn" class="primary">▶ Start simulation</button><button id="resetBtn" class="secondary">↺ Reset</button></div>
+        <p class="note">Demo mode uses generated traffic data. Connect a trained detection model and camera feed for real-world deployment.</p>
+      </div>
+      <div class="hero-art">
+        <div class="sun"></div><div class="road-label">INTERSECTION 01 <span>● ONLINE</span></div>
+        <div class="intersection">
+          <div class="road horizontal"></div><div class="road vertical"></div>
+          <div class="lane-mark h1"></div><div class="lane-mark h2"></div><div class="lane-mark v1"></div><div class="lane-mark v2"></div>
+          <div class="car car1">🚙</div><div class="car car2">🚗</div><div class="car car3">🚕</div><div class="car car4">🚘</div>
+          <div class="signal"><b id="signalLight"></b><span id="signalText">GREEN</span></div>
+          <div class="scan">AI VISION ACTIVE</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <article class="metric"><div class="metric-head">Vehicles detected <span>▣</span></div><strong id="vehicles">24</strong><small>Across 4 lanes</small></article>
+      <article class="metric"><div class="metric-head">Traffic density <span>▥</span></div><strong id="density">Medium</strong><small id="densityHint">Steady vehicle flow</small></article>
+      <article class="metric"><div class="metric-head">Signal timing <span>◷</span></div><strong id="timing">35 sec</strong><small>Adaptive green phase</small></article>
+      <article class="metric"><div class="metric-head">Estimated wait <span>⌛</span></div><strong id="wait">42 sec</strong><small id="waitHint">Per vehicle (demo)</small></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel">
+        <div class="panel-title"><div><p class="eyebrow">LIVE MONITORING</p><h2>Traffic by lane</h2></div><span class="pill"><i></i> Updating</span></div>
+        <div class="lane-row"><div class="lane-name">North <small>Lane 01</small></div><div class="bar"><span id="barN" style="width:48%"></span></div><b id="countN">12</b></div>
+        <div class="lane-row"><div class="lane-name">East <small>Lane 02</small></div><div class="bar"><span id="barE" style="width:68%"></span></div><b id="countE">17</b></div>
+        <div class="lane-row"><div class="lane-name">South <small>Lane 03</small></div><div class="bar"><span id="barS" style="width:32%"></span></div><b id="countS">8</b></div>
+        <div class="lane-row"><div class="lane-name">West <small>Lane 04</small></div><div class="bar"><span id="barW" style="width:56%"></span></div><b id="countW">14</b></div>
+        <div class="chart-legend"><span><i class="legend-blue"></i> Vehicle count</span><span>Illustrative sample data</span></div>
+      </article>
+      <article class="panel recommendation">
+        <p class="eyebrow">AI RECOMMENDATION</p><div class="recommend-icon">✦</div>
+        <h2 id="recommendTitle">Prioritize East lane</h2>
+        <p id="recommendText">East lane has the highest vehicle count. Allocate a longer green phase to help clear the queue.</p>
+        <div class="recommend-stats"><div><small>Suggested green</small><b id="suggested">45 seconds</b></div><div><small>Priority</small><b class="priority">High</b></div></div>
+      </article>
+    </section>
+
+    <section class="panel steps" id="how">
+      <p class="eyebrow">THE PROCESS</p><h2>From camera feed to better traffic flow</h2>
+      <div class="step-grid">
+        <div><span>01</span><h3>Capture</h3><p>Collect traffic video or use sample data from an intersection.</p></div>
+        <div><span>02</span><h3>Detect</h3><p>Preprocess frames and detect vehicles using a computer-vision model such as YOLO.</p></div>
+        <div><span>03</span><h3>Analyze</h3><p>Estimate lane density and identify congestion from vehicle counts.</p></div>
+        <div><span>04</span><h3>Optimize</h3><p>Recommend signal timings and evaluate the impact through simulation.</p></div>
+      </div>
+    </section>
+
+    <section class="about" id="about"><div><p class="eyebrow">MAJOR PROJECT</p><h2>AI-Powered Traffic Flow Optimization System</h2></div><p>This project demonstrates a practical smart-city concept: using computer vision and adaptive control logic to make traffic signals responsive to road conditions. This starter version is a deployable dashboard prototype; a trained model, validated dataset and safe hardware integration are needed before any real intersection use.</p></section>
+  </main>
+  <footer>FlowAI · Academic project prototype <span>Built for learning and simulation</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
